@@ -1,3 +1,4 @@
 .vscode
 strk_svc_env/
 .env
+insert_dummy_data.py
