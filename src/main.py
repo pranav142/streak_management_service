@@ -9,7 +9,7 @@ from enum import Enum
 app = Flask(__name__)
 
 load_dotenv()
-AVATAR_URL = "http://3.84.46.162:5050"
+AVATAR_URL = "http://54.210.73.216:5050"
 DB_CONFIG = {
     'host': os.getenv('DB_HOST'),
     'user': os.getenv('DB_USER'),
