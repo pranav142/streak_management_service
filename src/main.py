@@ -38,7 +38,9 @@ def update_streak(cursor, provided_date, last_streak_date, user_id) -> StreakUpd
         cursor.execute("UPDATE Users SET streak_count = streak_count + 1, last_streak = %s WHERE user_id = %s", (provided_date, user_id))
         return StreakUpdateStatus.INCREASED
     elif provided_date.date() == last_streak_date.date():
-        cursor.execute("UPDATE Users SET last_streak = %s WHERE user_id = %s", (provided_date, user_id))
+        # adding to streak count when date same for demo purposes
+        cursor.execute("UPDATE Users SET streak_count = streak_count + 1, last_streak = %s WHERE user_id = %s", (provided_date, user_id))
+        # cursor.execute("UPDATE Users SET last_streak = %s WHERE user_id = %s", (provided_date, user_id))
         return StreakUpdateStatus.INCREASED # Not same for demo purposes
     else:
         cursor.execute("UPDATE Users SET streak_count = 0, last_streak = %s WHERE user_id = %s", (provided_date, user_id))
